@@ -5,19 +5,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'npm test || true'
+                bat 'npm test || true'
             }
         }
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t mern-app .'
+                bat 'docker build -t mern-app .'
             }
         }
 
