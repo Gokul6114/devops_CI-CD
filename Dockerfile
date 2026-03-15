@@ -2,13 +2,14 @@ FROM node:18
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
-
 COPY . .
 
+RUN npm install
 RUN cd server && npm install
 RUN cd client && npm install
+
+RUN npm install -g nodemon
+RUN npm install -g vite
 
 EXPOSE 3000
 
