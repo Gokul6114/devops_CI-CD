@@ -45,7 +45,7 @@ app.use((err, req, res, next) => {
 });
 
 // DB Connection
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/textile_db';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://host.docker.internal:27017/textile_db';
 mongoose.connect(MONGO_URI)
   .then(() => {
     console.log('MongoDB connected successfully');
